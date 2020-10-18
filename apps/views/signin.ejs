@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oren Video Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="icon" href="/static/images/Favicon.png">
+<link rel="stylesheet" type="text/css" href="/static/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/fontello.css">
+<link rel="stylesheet" type="text/css" href="/static/css/fontello-codes.css">
+<link rel="stylesheet" type="text/css" href="/static/css/thumbs-embedded.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/responsive.css">
+<link rel="stylesheet" type="text/css" href="/static/css/color.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+
+	<header>
+		<div class="top_bar">
+			<div class="container">
+				<div class="top_header_content">
+					<div class="menu_logo">
+						<a href="#" title="" class="menu">
+							<i class="icon-menu"></i>
+						</a>
+						<a href="index.html" title="" class="logo">
+							<img src="/static/images/logo.png" alt="">
+						</a>
+					</div><!--menu_logo end-->
+					<div class="search_form">
+						<form>
+							<input type="text" name="search" placeholder="Search Videos">
+							<button type="submit">
+								<i class="icon-search"></i>
+							</button>
+						</form>
+					</div><!--search_form end-->					
+					<div class="clearfix"></div>
+				</div><!--top_header_content end-->
+			</div>
+		</div><!--header_content end-->		
+	</header><!--header end-->
+
+	<div class="side_menu">
+		<div class="form_dvv">
+			<a href="#" title="" class="login_form_show">Sign in</a>
+		</div>
+		<div class="sd_menu">
+			<ul class="mm_menu">
+				<li>
+					<span>
+						<i class="icon-home"></i>
+					</span>
+					<a href="#" title="">Home</a>
+				</li>
+				<li>
+					<span>
+						<i class="icon-fire"></i>
+					</span>
+					<a href="#" title="">Trending</a>
+				</li>
+			</ul>
+		</div><!--sd_menu end-->
+		<div class="sd_menu">
+			<h3>Library</h3>
+			<ul class="mm_menu">
+				<li>
+					<span>
+						<i class="icon-history"></i>
+					</span>
+					<a href="#" title="">History</a>
+				</li>
+				<li>
+					<span>
+						<i class="icon-watch_later"></i>
+					</span>
+					<a href="#" title="">Watch Later</a>
+				</li>
+				<li>
+					<span>
+						<i class="icon-purchased"></i>
+					</span>
+					<a href="#" title="">Purchases</a>
+				</li>
+				<li>
+					<span>
+						<i class="icon-like"></i>
+					</span>
+					<a href="#" title="">Liked Videos</a>
+				</li>
+				<li>
+					<span>
+						<i class="icon-play_list"></i>
+					</span>
+					<a href="#" title="">Playlist</a>
+				</li>
+			</ul>
+		</div><!--sd_menu end-->		
+		<div class="sd_menu">
+			<ul class="mm_menu">
+				<li>
+					<span>
+						<i class="icon-settings"></i>
+					</span>
+					<a href="#" title="">Settings</a>
+				</li>
+			</ul>
+		</div><!--sd_menu end-->
+		<div class="sd_menu m_linkz">
+			<ul class="mm_menu">
+				<li><a href="#">About</a></li>
+				<li><a href="#">Community Rules </a></li>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Terms</a></li>
+				<li><a href="#">Blogs</a></li>
+				<li><a href="#">Contracts </a></li>
+				<li><a href="#">Donate</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+			<span>azyrusthemes</span>
+		</div><!--sd_menu end-->
+		<div class="sd_menu bb-0">
+			<ul class="social_links">
+				<li>
+					<a href="#" title="">
+						<i class="icon-facebook-official"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#" title="">
+						<i class="icon-twitter"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#" title="">
+						<i class="icon-instagram"></i>
+					</a>
+				</li>
+			</ul><!--social_links end-->
+		</div><!--sd_menu end-->
+		<div class="dd_menu"></div>
+	</div><!--side_menu end-->
+
+	<section class="banner-section p120">
+		<div class="container">
+			<div class="banner-text">
+				<h2>Sign In</h2>
+				<p>Please sign in to have access to all videos and many more.</p>
+			</div><!--banner-text end-->
+		</div>
+	</section><!--banner-section end-->
+
+	<section class="form_popup">
+	
+		<div class="login_form" id="login_form">
+		 	<div class="hd-lg">
+		 		<img src="/static/images/logo.png" alt="">
+		 		<span>Log into your Oren account</span>
+			 </div><!--hd-lg end-->
+			 <div id="signupalert" style="<%if (!data || !data.error) { %> display:none <%}%>" class="alert alert-danger">
+                <p>Error:</p>
+                <%if (data && data.error) { %>
+                <span><%= data.error %></span>
+                <%}%>
+            </div>
+			<div class="user-account-pr">
+				<form role="form" method="POST" action="/admin/signin"> 
+					<div class="input-sec">
+						<input type="text" name="username" placeholder="Username">
+					</div>
+					<div class="input-sec">
+						<input type="Password" name="password" placeholder="Password">
+					</div>
+					<div class="chekbox-lg">
+						<label>
+							<input type="checkbox" name="remember" value="rem">
+							<b class="checkmark"> </b>
+							<span>Remember me</span>
+						</label>
+					</div>
+					<div class="input-sec mb-0">
+						<button type="submit">Login</button>
+					</div><!--input-sec end-->
+				</form>
+			</div><!--user-account end--->
+			<div class="fr-ps">
+				<h1>Don’t have an account? <a href="/admin/signup" title="" class="show_signup">Signup here.</a></h1>
+			</div><!--fr-ps end-->
+		</div><!--login end--->
+
+	</section><!--form_popup end-->	
+
+</div><!--wrapper end-->
+
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/popper.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/script.js"></script>
+
+
+</body>
+</html>

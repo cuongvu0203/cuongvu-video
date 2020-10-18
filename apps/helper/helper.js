@@ -8,11 +8,13 @@ function hash_password(password) {
 
     return hash;
 
-};
+}
 
 function compare_password(password, hash) {
-    return bcrypt.compareSync(password, hash);
-};
+    var status = bcrypt.compareSync(password, hash); 
+    console.log(status);
+    return status;
+}
 
 module.exports = {
     hash_password: hash_password,

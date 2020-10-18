@@ -28,8 +28,8 @@ router.post("/signin", function (req, res) {
     var data = users_model.getUserbyUsername(user_login.username);
     if (data) {
         data.then(function(users){
-            var user = users[0];  //sai ở đây         
-            var status = helper.compare_password(user_login.password, user.password);
+            var user = users[0];       
+            var status = helper.compare_password(user_login.password, user.PASSWORD);
             if (!status) {
                 res.render("signin", { data: { error: "Sai mật khẩu" } });
             }

@@ -4,7 +4,6 @@ var db = require("../common/database");
 var conn = db.getConnection();
 function addUser(user) {
     if (user) {
-        console.log(user);
         var defer = q.defer();
         conn.query("INSERT INTO users SET ?", user, function (err, result) {
             if (err) {

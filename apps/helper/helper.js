@@ -1,19 +1,17 @@
-var bycrypt = require("bcrypt");
+var bcryptjs = require("bcryptjs");
 var config = require("../../config/default.json");
 
 function hash_password(password) {
     var saltRounds = config.salt;
-    var salt = bycrypt.genSaltSync(saltRounds);
-    var hash = bycrypt.hashSync(password, salt);
+    var salt = bcryptjs.genSaltSync(saltRounds);
+    var hash = bcryptjs.hashSync(password, salt);
 
     return hash;
 
 }
 
 function compare_password(password, hash) {
-    var status = bcrypt.compareSync(password, hash); 
-    console.log(status);
-    return status;
+    return bcryptjs.compareSync(password, hash); 
 }
 
 module.exports = {

@@ -1,6 +1,8 @@
 var q = require("q");
 var db = require("../common/database");
 
+//Lưu ý: Khi select , update, delete, insert cần viết đúng tên bảng kể cả hoa lẫn thường mysql không hiểu giống mssql
+
 var conn = db.getConnection();
 function addUser(user) {
     if (user) {
@@ -24,7 +26,7 @@ function addUser(user) {
 function getUserbyUsername(username) {
     if (username) {
         var defer = q.defer();
-        conn.query("SELECT * FROM Users WHERE ?", {username: username}, function (err, result) {
+        conn.query("SELECT * FROM users WHERE ?", {USERNAME: username}, function (err, result) {
             if (err) {
                 defer.reject(err);
             }

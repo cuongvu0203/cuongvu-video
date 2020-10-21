@@ -4,11 +4,11 @@
     "port": "3000"
   },
   "mysql": {
-    "user": "basivnxy_vvideo",
-    "password": "nhuzXMUMq4,g",
-    "host": "172.96.191.84",
+    "user": "sa",
+    "password": "abcd@1111",
+    "host": "localhost",
     "port": 3306,
-    "database": "basivnxy_vietvideos"
+    "database": "vietxvideos"
   },
   "salt": 10,
   "secret-key":"XmltXMWOBGwHXgWHNES9f5OdWh3H1dke"

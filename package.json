@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec node app.js"
+    "start": "nodemon --exec node app.js",
+    "serve": "nodemon app.js"
   },
   "author": "Cuong Vu",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.6",
     "q": "^1.5.1"
   }
 }

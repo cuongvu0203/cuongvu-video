@@ -5,7 +5,15 @@ var users_model = require("../models/user");
 var helper = require("../helper/helper")
 
 router.get("/dashboard", function (req, res) {
-    res.render("dashboard",{ data: {} });
+    res.render("dashboard", { data: {} });
+});
+
+router.get("/category", function (req, res) {
+    res.render("admin/category", { data: {} });
+});
+
+router.get("/post", function (req, res) {
+    res.render("admin/post", { data: {} });
 });
 
 router.get("/signup", function (req, res) {
@@ -26,8 +34,8 @@ router.post("/signin", function (req, res) {
     }
     var data = users_model.getUserbyUsername(user_login.username);
     if (data) {
-        data.then(function(users){
-            var user = users[0];       
+        data.then(function (users) {
+            var user = users[0];
             var status = helper.compare_password(user_login.password, user.PASSWORD);
             if (!status) {
                 res.render("signin", { data: { error: "Sai mật khẩu" } });
